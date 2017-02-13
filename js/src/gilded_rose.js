@@ -60,3 +60,8 @@ class Shop {
     return this.items;
   }
 }
+
+export {
+  Item,
+  Shop
+}

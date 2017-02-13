@@ -1,0 +1,18 @@
+{
+  "name": "gilded-rose-solution",
+  "version": "1.0.0",
+  "description": "A gilded rose solution",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register"
+  },
+  "author": "sminutoli",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "expect": "^1.20.2",
+    "mocha": "^3.2.0"
+  }
+}
