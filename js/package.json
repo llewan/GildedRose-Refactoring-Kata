@@ -4,7 +4,8 @@
   "description": "A gilded rose solution",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register"
+    "test": "mocha --compilers js:babel-core/register",
+    "test:watch": "mocha --compilers js:babel-core/register -w"
   },
   "author": "sminutoli",
   "license": "ISC",
