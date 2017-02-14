@@ -1,3 +1,5 @@
+import itemTypes from './itemTypes';
+
 const normalItemKind = {
   updateQuality(){
     const nextQuality = this.quality - (this.sellIn >= 0 ? 1 : 2);
@@ -30,9 +32,10 @@ const passItemKind = {
   }
 };
 
-export {
-  normalItemKind,
-  agedItemKind,
-  legendaryItemKind,
-  passItemKind
+export default function getkindFor(anItem){
+  return {
+    [itemTypes.AGED]: agedItemKind,
+    [itemTypes.PASS]: passItemKind,
+    [itemTypes.LEGENDARY]: legendaryItemKind
+  }[anItem.name] || normalItemKind;
 }

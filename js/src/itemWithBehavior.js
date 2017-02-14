@@ -1,5 +1,4 @@
-import itemTypes from './itemTypes';
-import { normalItemKind, agedItemKind, legendaryItemKind, passItemKind } from './itemKinds';
+import getKindFor from './itemKinds';
 
 const commonBehavior = {
   update(){
@@ -13,14 +12,7 @@ const commonBehavior = {
 
 const ItemWithBehavior = {
   from(anItem){
-    return Object.assign({}, anItem, commonBehavior, ItemWithBehavior.kindFor(anItem));
-  },
-  kindFor(anItem){
-    return {
-      [itemTypes.AGED]: agedItemKind,
-      [itemTypes.PASS]: passItemKind,
-      [itemTypes.LEGENDARY]: legendaryItemKind
-    }[anItem.name] || normalItemKind;
+    return Object.assign({}, anItem, commonBehavior, getKindFor(anItem));
   }
 };
 
