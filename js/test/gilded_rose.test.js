@@ -1,5 +1,6 @@
 import expect from 'expect';
 import { Shop, Item } from '../src/gilded_rose';
+import itemTypes from '../src/itemTypes';
 
 function setupStoreWithNameSellInAndQuality(name = 'sword', sellIn = 10, quality = 30){
   return new Shop([new Item(name, sellIn, quality)]).updateQuality()[0];
@@ -68,7 +69,7 @@ describe('ItemNormal updated', () => {
 });
 
 describe('Aged Brie updated', () => {
-  const itemName = 'Aged Brie';
+  const itemName = itemTypes.AGED;
   describe('when is in sell range', () => {
     it('should increment its quality by 1', () => {
       const anUpdatedItem = setupStoreWithNameSellInAndQuality(itemName, 10, 30);
@@ -99,7 +100,7 @@ describe('Aged Brie updated', () => {
 });
 
 describe('Backstage Pass updated', () => {
-  const itemName = 'Backstage passes to a TAFKAL80ETC concert';
+  const itemName = itemTypes.PASS;
 
   describe('when there is 10+ days left for the concert', () => {
     it('should increment its quality by 1', () => {
@@ -149,7 +150,7 @@ describe('Backstage Pass updated', () => {
 });
 
 describe('Legendary item updated', () => {
-  const itemName = 'Sulfuras, Hand of Ragnaros';
+  const itemName = itemTypes.LEGENDARY;
 
   it('shouldnt update its quality', () => {
     const anUpdatedItem = setupStoreWithNameSellInAndQuality(itemName, 1, 80);
